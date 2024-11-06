@@ -28,7 +28,7 @@ var (
 	LogLevel = log.WarnLevel
 )
 
-//abstractParagraph represents the paragraph which will be used as abstract.
+// abstractParagraph represents the paragraph which will be used as abstract.
 type abstractParagraph struct {
 	title   string
 	content string
@@ -317,6 +317,7 @@ func (document astNode) renderPlainMarkdown(content []byte) string {
 	var buffer bytes.Buffer
 
 	mdrender := mdrender.NewRenderer()
+	mdrender.AddMarkdownOptions()
 	err := mdrender.Render(&buffer, content, document.Node)
 	if err != nil {
 		log.Fatalf("An error occurred: %s", err)
@@ -328,7 +329,6 @@ func (document astNode) renderPlainMarkdown(content []byte) string {
 // buildTableOfContents builds a TOC based on markdown content
 func (md rawMarkdown) buildTableOfContents() (astNode, []byte) {
 	gm := goldmark.New(
-		goldmark.WithParserOptions(parser.WithAutoHeadingID()),
 		goldmark.WithExtensions(
 			&toc.Extender{},
 			meta.Meta,
