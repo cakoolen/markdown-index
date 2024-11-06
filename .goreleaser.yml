@@ -7,7 +7,7 @@ builds:
   - env:
       - CGO_ENABLED=0
     ldflags:
-      - '-s -w -X github.com/mmiranda/markdown-index/cmd.version={{.Version}} -X github.com/mmiranda/markdown-index/cmd.commit={{.Commit}} -X github.com/mmiranda/markdown-index/cmd.date={{.Date}}'
+      - '-s -w -X github.com/cakoolen/markdown-index/cmd.version={{.Version}} -X github.com/cakoolen/markdown-index/cmd.commit={{.Commit}} -X github.com/cakoolen/markdown-index/cmd.date={{.Date}}'
     goos:
       - linux
       - windows
@@ -37,7 +37,7 @@ dockers:
       - "ghcr.io/mmiranda/markdown-index:{{ .Tag }}"
     dockerfile: Dockerfile.goreleaser
     build_flag_templates:
-    - "--label=org.opencontainers.image.source=https://github.com/mmiranda/markdown-index"
+    - "--label=org.opencontainers.image.source=https://github.com/cakoolen/markdown-index"
     - "--label=org.opencontainers.image.description=Tool to generate a global Markdown Summary Index based on other markdown files"
     - "--label=org.opencontainers.image.created={{.Date}}"
     - "--label=org.opencontainers.image.title={{.ProjectName}}"
@@ -61,7 +61,7 @@ brews:
 
     folder: Formula
 
-    homepage: "https://github.com/mmiranda/markdown-index"
+    homepage: "https://github.com/cakoolen/markdown-index"
     description: "Tool to generate a global Markdown Summary Index based on other markdown files"
     license: "MIT"
 

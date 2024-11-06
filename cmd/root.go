@@ -5,7 +5,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/mmiranda/markdown-index/markdown"
+	"github.com/cakoolen/markdown-index/markdown"
 	"github.com/spf13/cobra"
 	goVersion "go.hein.dev/go-version"
 )

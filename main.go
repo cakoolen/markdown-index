@@ -1,6 +1,6 @@
 package main
 
-import "github.com/mmiranda/markdown-index/cmd"
+import "github.com/cakoolen/markdown-index/cmd"
 
 func main() {
 	cmd.Execute()
