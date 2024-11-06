@@ -1,7 +1,7 @@
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![codecov](https://codecov.io/gh/mmiranda/markdown-index/branch/main/graph/badge.svg?token=3B0LZEZ6XN)](https://codecov.io/gh/mmiranda/markdown-index)
-[![https://goreportcard.com/report/github.com/mmiranda/markdown-index](https://goreportcard.com/badge/github.com/mmiranda/markdown-index)](https://goreportcard.com/report/github.com/mmiranda/markdown-index)
-![[Test](https://github.com/mmiranda/markdown-index/actions/workflows/test-coverage.yml)](https://github.com/mmiranda/markdown-index/actions/workflows/test-coverage.yml/badge.svg)
+[![https://goreportcard.com/report/github.com/cakoolen/markdown-index](https://goreportcard.com/badge/github.com/cakoolen/markdown-index)](https://goreportcard.com/report/github.com/cakoolen/markdown-index)
+![[Test](https://github.com/cakoolen/markdown-index/actions/workflows/test-coverage.yml)](https://github.com/cakoolen/markdown-index/actions/workflows/test-coverage.yml/badge.svg)
 
 
 # markdown index
@@ -18,7 +18,7 @@ brew tap mmiranda/apps
 brew install markdown-index
 ```
 
-If you prefer, you also can download the latest binary on the [release section](https://github.com/mmiranda/markdown-index/releases), or simply use the pre-built [dockerfile image](#dockerfile)
+If you prefer, you also can download the latest binary on the [release section](https://github.com/cakoolen/markdown-index/releases), or simply use the pre-built [dockerfile image](#dockerfile)
 
 ## Usage
 You can use this tool using multiple ways:

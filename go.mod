@@ -1,4 +1,4 @@
-module github.com/mmiranda/markdown-index
+module github.com/cakoolen/markdown-index
 
 go 1.17
 
