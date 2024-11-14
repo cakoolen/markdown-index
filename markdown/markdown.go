@@ -11,7 +11,6 @@ import (
 	"strings"
 
 	mdrender "github.com/Kunde21/markdownfmt/v2/markdown"
-	toc "github.com/abhinav/goldmark-toc"
 	log "github.com/sirupsen/logrus"
 	"github.com/yuin/goldmark"
 	meta "github.com/yuin/goldmark-meta"
@@ -326,14 +325,21 @@ func (document astNode) renderPlainMarkdown(content []byte) string {
 	return buffer.String()
 }
 
+type idGenerator struct{}
+
+func (idGenerator) Generate(value []byte, kind ast.NodeKind) []byte {
+	return nil
+}
+
+func (idGenerator) Put(value []byte) {
+
+}
+
 // buildTableOfContents builds a TOC based on markdown content
 func (md rawMarkdown) buildTableOfContents() (astNode, []byte) {
-	gm := goldmark.New(
-		goldmark.WithExtensions(
-			&toc.Extender{},
-			meta.Meta,
-		),
-	)
+	ctx := parser.NewContext(parser.WithIDs(&idGenerator{}))
 
-	return astNode{gm.Parser().Parse(text.NewReader(md.content))}, md.content
+	gm := goldmark.New()
+
+	return astNode{gm.Parser().Parse(text.NewReader(md.content), parser.WithContext(ctx))}, md.content
 }
